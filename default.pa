@@ -1,0 +1,75 @@
+### Restart: systemctl --user restart pulseaudio
+
+# include the default.pa pulseaudio config file
+.include /etc/pulse/default.pa
+
+# V_SINK_A
+.ifexists module-null-sink.so
+load-module module-null-sink sink_name=V_SINK_A sink_properties=device.description="V_SINK_A"
+.endif
+
+# V_MONIT_A
+.ifexists module-virtual-source.so
+load-module module-virtual-source source_name=V_MONIT_A master=V_SINK_A.monitor
+.endif
+
+# V_SINK_B
+.ifexists module-null-sink.so
+load-module module-null-sink sink_name=V_SINK_B sink_properties=device.description="V_SINK_B"
+.endif
+
+# V_MONIT_B
+.ifexists module-virtual-source.so
+load-module module-virtual-source source_name=V_MONIT_B master=V_SINK_B.monitor
+.endif
+
+# V_SINK_C
+.ifexists module-null-sink.so
+load-module module-null-sink sink_name=V_SINK_C sink_properties=device.description="V_SINK_C"
+.endif
+
+# V_MONIT_C
+.ifexists module-virtual-source.so
+load-module module-virtual-source source_name=V_MONIT_C master=V_SINK_C.monitor
+.endif
+
+# V_SINK_D
+.ifexists module-null-sink.so
+load-module module-null-sink sink_name=V_SINK_D sink_properties=device.description="V_SINK_D"
+.endif
+
+# V_MONIT_D
+.ifexists module-virtual-source.so
+load-module module-virtual-source source_name=V_MONIT_D master=V_SINK_D.monitor
+.endif
+
+# MIC => V_SINK_A
+.ifexists module-loopback.so
+load-module module-loopback source=@DEFAULT_SOURCE@ sink=V_SINK_A latency_msec=1
+.endif
+
+# MIC => V_SINK_D
+.ifexists module-loopback.so
+load-module module-loopback source=@DEFAULT_SOURCE@ sink=V_SINK_D latency_msec=1
+.endif
+
+# V_MONIT_B => V_SINK_D
+.ifexists module-loopback.so
+load-module module-loopback source=V_SINK_B.monitor sink=V_SINK_D latency_msec=1
+.endif
+
+# V_MONIT_B => OUTPUT
+.ifexists module-loopback.so
+load-module module-loopback source=V_SINK_B.monitor sink=@DEFAULT_SINK@ latency_msec=1
+.endif
+
+# V_MONIT_C => V_MONIT_A
+.ifexists module-loopback.so
+load-module module-loopback source=V_SINK_C.monitor sink=V_SINK_A latency_msec=1
+.endif
+
+# V_MONIT_C => OUTPUT
+.ifexists module-loopback.so
+load-module module-loopback source=V_SINK_C.monitor sink=@DEFAULT_SINK@ latency_msec=1
+.endif
+
