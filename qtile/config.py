@@ -29,7 +29,7 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
-LEMON = "#D8F020"
+DARK_PURPLE = "#301934"
 PINK = "#F02070"
 
 mod = "mod4"
@@ -138,12 +138,13 @@ for i in groups:
 
 layouts = [
     layout.Columns(
+        border_normal=DARK_PURPLE,
         border_focus=PINK,
-        border_width=1,
+        border_width=4,
         margin=[4, 2, 4, 2],
         margin_on_single=2,
         border_on_single=True,
-        single_border_width=1,
+        single_border_width=4,
     ),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
