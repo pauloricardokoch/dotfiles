@@ -140,11 +140,9 @@ layouts = [
     layout.Columns(
         border_normal=DARK_PURPLE,
         border_focus=PINK,
-        border_width=2,
-        margin=[2, 1, 2, 1],
-        margin_on_single=1,
+        border_width=3,
         border_on_single=True,
-        single_border_width=2,
+        single_border_width=3,
     ),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
