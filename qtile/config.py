@@ -140,8 +140,8 @@ layouts = [
     layout.Columns(
         border_focus=PINK,
         border_width=1,
-        margin=[8, 4, 8, 4],
-        margin_on_single=4,
+        margin=[4, 2, 4, 2],
+        margin_on_single=2,
         border_on_single=True,
         single_border_width=1,
     ),
