@@ -144,7 +144,11 @@ layouts = [
         border_on_single=True,
         single_border_width=3,
     ),
-    layout.Max(),
+    layout.Max(
+        border_normal=DARK_PURPLE,
+        border_focus=PINK,
+        border_width=3,
+    ),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
