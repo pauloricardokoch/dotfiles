@@ -29,8 +29,9 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
-DARK_PURPLE = "#301934"
-PINK = "#F02070"
+SECONDARY = "#3A4D39"
+PRIMARY = "#65B741"
+BORDER_WIDTH = 2
 
 mod = "mod4"
 terminal = guess_terminal()
@@ -138,16 +139,16 @@ for i in groups:
 
 layouts = [
     layout.Columns(
-        border_normal=DARK_PURPLE,
-        border_focus=PINK,
-        border_width=3,
+        border_normal=SECONDARY,
+        border_focus=PRIMARY,
+        border_width=BORDER_WIDTH,
         border_on_single=True,
-        single_border_width=3,
+        single_border_width=BORDER_WIDTH,
     ),
     layout.Max(
-        border_normal=DARK_PURPLE,
-        border_focus=PINK,
-        border_width=3,
+        border_normal=SECONDARY,
+        border_focus=PRIMARY,
+        border_width=BORDER_WIDTH,
     ),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -190,7 +191,7 @@ screens = [
                 widget.Systray(),
                 widget.Volume(emoji=True),
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p",
-                             foreground=PINK,
+                             foreground=PRIMARY,
                              fmt="<b>{}</b>"),
             ],
             24,
