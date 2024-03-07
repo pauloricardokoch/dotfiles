@@ -174,6 +174,7 @@ screens = [
                 widget.CurrentLayout(),
                 widget.GroupBox(),
                 widget.Prompt(),
+                widget.Sep(),
                 widget.WindowName(),
                 widget.Chord(
                     chords_colors={
@@ -183,12 +184,12 @@ screens = [
                 ),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
+                widget.Sep(),
                 widget.Systray(),
                 widget.Volume(emoji=True),
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p",
                              foreground=PINK,
                              fmt="<b>{}</b>"),
-                widget.QuickExit(),
             ],
             24,
         ),
@@ -213,6 +214,7 @@ screens = [
             [
                 widget.CurrentLayout(),
                 widget.GroupBox(),
+                widget.Sep(),
                 widget.Spacer(),
                 widget.Notify(),
             ],
