@@ -2,8 +2,7 @@
 # Copyright (c) 2010, 2014 dequis
 # Copyright (c) 2012 Randall Ma
 # Copyright (c) 2012-2014 Tycho Andersen
-# Copyright (c) 2012 Craig Barnes
-# Copyright (c) 2013 horsik
+# Copyright (c) 2012 Craig Barnes Copyright (c) 2013 horsik
 # Copyright (c) 2013 Tao Sauvage
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,8 +29,8 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 SECONDARY = "#37306B"
-PRIMARY = "#0079FF"
-BRIGHT = "#D6F7AD"
+PRIMARY = "#1181FF"
+BRIGHT = "#DFCCFB"
 BORDER_WIDTH = 3
 
 mod = "mod4"
@@ -145,6 +144,7 @@ layouts = [
         border_width=BORDER_WIDTH,
         border_on_single=True,
         single_border_width=BORDER_WIDTH,
+        margin=[0, 0, 0, 0],
     ),
     layout.Max(
         border_normal=SECONDARY,
@@ -186,11 +186,17 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
+                widget.Sep(),
+                widget.Wttr(
+                    location={'Passo Fundo': 'Passo Fundo'},
+                    foreground=BRIGHT,
+                ),
+                widget.Sep(),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
-                widget.Sep(),
                 widget.Systray(),
                 widget.Volume(emoji=True),
+                widget.Sep(),
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p",
                              foreground=BRIGHT,
                              fmt="<b>{}</b>"),
