@@ -29,9 +29,10 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
-SECONDARY = "#3A4D39"
-PRIMARY = "#65B741"
-BORDER_WIDTH = 2
+SECONDARY = "#37306B"
+PRIMARY = "#0079FF"
+BRIGHT = "#D6F7AD"
+BORDER_WIDTH = 3
 
 mod = "mod4"
 terminal = guess_terminal()
@@ -178,7 +179,7 @@ screens = [
                 widget.GroupBox(),
                 widget.Prompt(),
                 widget.Sep(),
-                widget.WindowName(),
+                widget.WindowName(foreground=BRIGHT),
                 widget.Chord(
                     chords_colors={
                         "launch": ("#ff0000", "#ffffff"),
@@ -191,7 +192,7 @@ screens = [
                 widget.Systray(),
                 widget.Volume(emoji=True),
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p",
-                             foreground=PRIMARY,
+                             foreground=BRIGHT,
                              fmt="<b>{}</b>"),
             ],
             24,
