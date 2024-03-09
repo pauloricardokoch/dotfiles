@@ -188,7 +188,7 @@ screens = [
                 ),
                 widget.Sep(),
                 widget.CheckUpdates(
-                    distro="Fedora", 
+                    distro="Fedora",
                     foreground=BRIGHT,
                 ),
                 widget.Sep(),
@@ -199,8 +199,7 @@ screens = [
                 ),
                 widget.Sep(),
                 widget.Clock(
-                    format="%Y-%m-%d %a %I:%M %p",
-                    fmt="<b>{}</b>",
+                    format="%a %m/%d/%y - %I:%M %p",
                     foreground=BRIGHT,
                 ),
                 widget.Sep(),
