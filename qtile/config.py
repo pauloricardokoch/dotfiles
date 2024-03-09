@@ -30,7 +30,7 @@ from libqtile.utils import guess_terminal
 
 SECONDARY = "#37306B"
 PRIMARY = "#1181FF"
-BRIGHT = "#DFCCFB"
+BRIGHT = "#B7C9F2"
 BORDER_WIDTH = 3
 
 mod = "mod4"
@@ -90,7 +90,7 @@ keys = [
 
     Key([mod, "shift"], "r", lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"),
-    Key([mod], 'r', lazy.spawn('rofi -show drun')),
+    Key([mod], "r", lazy.spawn("rofi -show drun")),
 
     Key([mod], "period", lazy.next_screen(), desc="Next Monitor"),
     Key([mod], "comma", lazy.prev_screen(), desc="Prev Monitor"),
@@ -175,9 +175,9 @@ screens = [
     Screen(
         bottom=bar.Bar(
             [
-                widget.CurrentLayout(),
-                widget.GroupBox(),
-                widget.Prompt(),
+                widget.CurrentLayout(foreground=BRIGHT),
+                widget.GroupBox(foreground=BRIGHT),
+                widget.Prompt(foreground=BRIGHT),
                 widget.Sep(),
                 widget.WindowName(foreground=BRIGHT),
                 widget.Chord(
@@ -187,8 +187,20 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Sep(),
+                widget.CheckUpdates(
+                    distro="Fedora", 
+                    foreground=BRIGHT,
+                ),
+                widget.Sep(),
                 widget.Wttr(
-                    location={'Passo Fundo': 'Passo Fundo'},
+                    location={"Passo Fundo": "Passo Fundo"},
+                    format="%c%t",
+                    foreground=BRIGHT,
+                ),
+                widget.Sep(),
+                widget.Clock(
+                    format="%Y-%m-%d %a %I:%M %p",
+                    fmt="<b>{}</b>",
                     foreground=BRIGHT,
                 ),
                 widget.Sep(),
@@ -196,12 +208,18 @@ screens = [
                 # widget.StatusNotifier(),
                 widget.Systray(),
                 widget.Volume(emoji=True),
-                widget.Sep(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p",
-                             foreground=BRIGHT,
-                             fmt="<b>{}</b>"),
+                widget.Battery(
+                    discharge_char="&#128267;",
+                    full_char="&#128267;",
+                    empty_char="&#128267;",
+                    charge_char="&#128268;",
+                    notify_below=0.9,
+                    format="{char}{percent: 2.0%}",
+                    hide_threshold=0.7,
+                    foreground=BRIGHT,
+                ),
             ],
-            24,
+            30,
         ),
         # You can uncomment this variable if you see that on X11 floating resize/moving is laggy
         # By default we handle these events delayed to already improve performance, however your system might still be struggling
