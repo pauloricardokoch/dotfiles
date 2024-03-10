@@ -31,7 +31,7 @@ from libqtile.utils import guess_terminal
 SECONDARY = "#37306B"
 PRIMARY = "#1181FF"
 BRIGHT = "#B7C9F2"
-BORDER_WIDTH = 3
+BORDER_WIDTH = 1
 
 mod = "mod4"
 terminal = guess_terminal()
@@ -144,7 +144,8 @@ layouts = [
         border_width=BORDER_WIDTH,
         border_on_single=True,
         single_border_width=BORDER_WIDTH,
-        margin=[0, 0, 0, 0],
+        margin=5,
+        margin_on_single=10,
     ),
     layout.Max(
         border_normal=SECONDARY,
@@ -166,7 +167,7 @@ layouts = [
 
 widget_defaults = dict(
     font="Hurmit Nerd Font",
-    fontsize=18,
+    fontsize=14,
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
@@ -206,7 +207,15 @@ screens = [
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
                 widget.Systray(),
-                widget.Volume(emoji=True),
+                widget.Volume(
+                    emoji=True,
+                    get_volume_command="pactl get-sink-volume @DEFAULT_SINK@",
+                    volume_down_command="pactl set-sink-volume @DEFAULT_SINK@ -5%",
+                    volume_up_command="pactl set-sink-volume @DEFAULT_SINK@ +5%",
+                    mute_command="pactl set-sink-mute @DEFAULT_SINK@ toggle",
+                    check_mute_command="pactl get-sink-mute @DEFAULT_SINK@",
+                    check_mute_string="Mute: yes",
+                ),
                 widget.Battery(
                     discharge_char="&#128267;",
                     full_char="&#128267;",
@@ -218,23 +227,19 @@ screens = [
                     foreground=BRIGHT,
                 ),
             ],
-            30,
+            25,
         ),
         # You can uncomment this variable if you see that on X11 floating resize/moving is laggy
         # By default we handle these events delayed to already improve performance, however your system might still be struggling
         # This variable is set to None (no cap) by default, but you can set it to 60 to indicate that you limit it to 60 events per second
         # x11_drag_polling_rate = 60,
-        wallpaper="/home/pkoch/Pictures/wallpapers/noragami2.webp",
-        wallpaper_mode="fill",
     ),
     Screen(bottom=bar.Bar(
         [
             widget.CurrentLayout(),
             widget.GroupBox(),
         ],
-        24),
-        wallpaper="/home/pkoch/Pictures/wallpapers/dororo2.jpg",
-        wallpaper_mode="fill",
+        25),
     ),
     Screen(
         top=bar.Bar(
@@ -245,9 +250,7 @@ screens = [
                 widget.Spacer(),
                 widget.Notify(),
             ],
-            24),
-        wallpaper="/home/pkoch/Pictures/wallpapers/kochou1.jpeg",
-        wallpaper_mode="fill",
+            25),
     ),
 ]
 
