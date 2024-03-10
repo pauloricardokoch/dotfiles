@@ -196,7 +196,7 @@ screens = [
                 ),
                 widget.Sep(),
                 widget.CheckUpdates(
-                    distro="Fedora",
+                    distro="Arch",
                     foreground=BRIGHT,
                 ),
                 widget.Sep(),
@@ -214,6 +214,7 @@ screens = [
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
                 widget.Systray(),
+                widget.Sep(),
                 widget.Volume(
                     emoji=True,
                     get_volume_command="pactl get-sink-volume @DEFAULT_SINK@",
