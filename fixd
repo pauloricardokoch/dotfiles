@@ -1,6 +1,10 @@
 #!/bin/bash
 
 xrandr --output eDP1 --off \
---output HDMI1 --size 1920x1980 --primary \
---output DP2-3 --size 1920x1080 --rotate left --left-of HDMI1 \
---output DP2-1 --size 2560x1080 --rate 120 --right-of HDMI1
+--output HDMI1 --size 1920x1080 --rate 120 --primary --preferred \
+--output DP2-3 --size 1920x1080 --rate 120 --rotate left --left-of HDMI1 --preferred \
+--output DP2-1 --size 2560x1080 --rate 120 --right-of HDMI1 --preferred
+
+nitrogen --set-zoom-fill ~/Pictures/noragami.jpg --head=0 
+nitrogen --set-zoom-fill ~/Pictures/dororo.jpg --head=1
+nitrogen --set-zoom-fill ~/Pictures/kochou.jpg --head=2 

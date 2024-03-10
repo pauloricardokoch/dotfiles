@@ -94,6 +94,13 @@ keys = [
 
     Key([mod], "period", lazy.next_screen(), desc="Next Monitor"),
     Key([mod], "comma", lazy.prev_screen(), desc="Prev Monitor"),
+
+    Key(
+        [mod], "p",
+        lazy.spawn(
+            "scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -s -e 'mv $f ~/Pictures/Screenshots/'"
+        )
+    ),
 ]
 
 # Add key bindings to switch VTs in Wayland.
