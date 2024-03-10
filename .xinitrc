@@ -7,12 +7,6 @@ picom &
 # unclutter hides the mouse cursor
 unclutter --jitter 10 --ignore-scrolling --start-hidden --fork
 
-# nitrogen for wallpaper
-fixd 
-nitrogen --set-zoom-fill ~/Pictures/noragami.jpg --head=0 
-nitrogen --set-zoom-fill ~/Pictures/dororo.jpg --head=1
-nitrogen --set-zoom-fill ~/Pictures/kochou.jpg --head=2 
-
 # dbus
 /usr/lib/notification-daemon-1.0/notification-daemon &
 
