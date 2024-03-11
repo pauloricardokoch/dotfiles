@@ -224,6 +224,10 @@ screens = [
                     check_mute_command="pactl get-sink-mute @DEFAULT_SINK@",
                     check_mute_string="Mute: yes",
                 ),
+                # duplicate to show the percentage alongside the icon
+                widget.Volume(
+                    get_volume_command="pactl get-sink-volume @DEFAULT_SINK@",
+                ),
                 widget.Battery(
                     discharge_char="&#128267;",
                     full_char="&#128267;",
