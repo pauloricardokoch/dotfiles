@@ -31,7 +31,7 @@ from libqtile.utils import guess_terminal
 SECONDARY = "#37306B"
 PRIMARY = "#1181FF"
 BRIGHT = "#B7C9F2"
-BORDER_WIDTH = 4
+BORDER_WIDTH = 3
 
 mod = "mod4"
 terminal = guess_terminal()
