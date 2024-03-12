@@ -98,9 +98,11 @@ keys = [
     Key(
         [mod], "p",
         lazy.spawn(
-            "scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -s -e 'mv $f ~/Pictures/Screenshots/'"
+            "scrot 'ArchLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -s -e 'mv $f ~/Pictures/Screenshots/'"
         )
     ),
+    Key([mod], "o", lazy.spawn("betterlockscreen -l dim")),
+    Key([mod], "g", lazy.spawn("thunar")),
 ]
 
 # Add key bindings to switch VTs in Wayland.
