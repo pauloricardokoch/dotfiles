@@ -98,7 +98,7 @@ keys = [
     Key(
         [mod], "p",
         lazy.spawn(
-            "scrot 'ArchLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -s -e 'mv $f ~/Pictures/Screenshots/'"
+            "scrot 'ArchLinux_%Y%m%d_%H%M%S_%s_screenshot_$wx$h.jpg' -s -e 'mv $f ~/Pictures/Screenshots/'"
         )
     ),
     Key([mod], "o", lazy.spawn("betterlockscreen -l dim")),
