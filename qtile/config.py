@@ -160,6 +160,7 @@ layouts = [
         border_normal=SECONDARY,
         border_focus=PRIMARY,
         border_width=BORDER_WIDTH,
+        margin=10,
     ),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -252,6 +253,8 @@ screens = [
         [
             widget.CurrentLayout(),
             widget.GroupBox(),
+            widget.Sep(),
+            widget.WindowName(foreground=BRIGHT),
         ],
         25),
     ),
@@ -260,6 +263,8 @@ screens = [
             [
                 widget.CurrentLayout(),
                 widget.GroupBox(),
+                widget.Sep(),
+                widget.WindowName(foreground=BRIGHT),
                 widget.Sep(),
                 widget.Spacer(),
                 widget.Notify(),
