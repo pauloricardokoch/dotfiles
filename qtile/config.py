@@ -153,14 +153,14 @@ layouts = [
         border_width=BORDER_WIDTH,
         border_on_single=True,
         single_border_width=BORDER_WIDTH,
-        margin=5,
-        margin_on_single=10,
+        margin=0,
+        margin_on_single=0,
     ),
     layout.Max(
         border_normal=SECONDARY,
         border_focus=PRIMARY,
         border_width=BORDER_WIDTH,
-        margin=10,
+        margin=0,
     ),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -176,7 +176,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="Hurmit Nerd Font",
+    font="Hurmit Nerd Font Mono",
     fontsize=14,
     padding=3,
 )
@@ -199,7 +199,7 @@ screens = [
                 ),
                 widget.Sep(),
                 widget.CheckUpdates(
-                    distro="Arch",
+                    distro="Fedora",
                     foreground=BRIGHT,
                 ),
                 widget.Sep(),
