@@ -28,7 +28,7 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
-SECONDARY = "#37306B"
+SECONDARY = "#000000"
 PRIMARY = "#1181FF"
 BRIGHT = "#B7C9F2"
 BORDER_WIDTH = 3
@@ -176,7 +176,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="Hurmit Nerd Font Mono",
+    font="Hurmit Nerd Font",
     fontsize=14,
     padding=3,
 )
