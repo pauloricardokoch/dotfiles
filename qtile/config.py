@@ -199,7 +199,7 @@ screens = [
                 ),
                 widget.Sep(),
                 widget.CheckUpdates(
-                    distro="Fedora",
+                    distro="Arch",
                     foreground=BRIGHT,
                 ),
                 widget.Sep(),
@@ -249,15 +249,6 @@ screens = [
         # This variable is set to None (no cap) by default, but you can set it to 60 to indicate that you limit it to 60 events per second
         # x11_drag_polling_rate = 60,
     ),
-    Screen(bottom=bar.Bar(
-        [
-            widget.CurrentLayout(),
-            widget.GroupBox(),
-            widget.Sep(),
-            widget.WindowName(foreground=BRIGHT),
-        ],
-        25),
-    ),
     Screen(
         top=bar.Bar(
             [
@@ -270,6 +261,15 @@ screens = [
                 widget.Notify(),
             ],
             25),
+    ),
+    Screen(bottom=bar.Bar(
+        [
+            widget.CurrentLayout(),
+            widget.GroupBox(),
+            widget.Sep(),
+            widget.WindowName(foreground=BRIGHT),
+        ],
+        25),
     ),
 ]
 
