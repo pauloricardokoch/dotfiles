@@ -13,5 +13,5 @@ TERM = "xterm-256color"
 opacity = 0.9
 
 [font]
-normal = { family = "Iosevka Nerd Font", style = "normal" }
-size = 13.5
+normal = { family = "MonofurNerdFont", style = "normal" }
+size = 17
