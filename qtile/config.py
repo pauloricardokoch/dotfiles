@@ -28,12 +28,13 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
-SECONDARY = "#000000"
-PRIMARY = "#1181FF"
-BRIGHT = "#B7C9F2"
+SECONDARY = "#474F7A"
+PRIMARY = "#7360DF"
+BRIGHT = "#FAE7F3"
 BORDER_WIDTH = 3
+MARGIN = 10
 
-mod = "mod4"
+mod = "mod1"
 terminal = guess_terminal()
 
 keys = [
@@ -153,14 +154,14 @@ layouts = [
         border_width=BORDER_WIDTH,
         border_on_single=True,
         single_border_width=BORDER_WIDTH,
-        margin=0,
-        margin_on_single=0,
+        margin=MARGIN,
+        margin_on_single=MARGIN,
     ),
     layout.Max(
         border_normal=SECONDARY,
         border_focus=PRIMARY,
         border_width=BORDER_WIDTH,
-        margin=0,
+        margin=MARGIN,
     ),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
