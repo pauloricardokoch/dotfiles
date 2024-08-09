@@ -155,13 +155,11 @@ layouts = [
         border_on_single=True,
         single_border_width=BORDER_WIDTH,
         margin=MARGIN,
-        margin_on_single=MARGIN,
     ),
     layout.Max(
         border_normal=SECONDARY,
         border_focus=PRIMARY,
         border_width=BORDER_WIDTH,
-        margin=MARGIN,
     ),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
