@@ -155,6 +155,7 @@ layouts = [
         border_on_single=True,
         single_border_width=BORDER_WIDTH,
         margin=MARGIN,
+        margin_on_single=0,
     ),
     layout.Max(
         border_normal=SECONDARY,
