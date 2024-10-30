@@ -32,7 +32,7 @@ SECONDARY = "#474F7A"
 PRIMARY = "#7360DF"
 BRIGHT = "#FAE7F3"
 BORDER_WIDTH = 3
-MARGIN = 10
+MARGIN = 15
 
 mod = "mod1"
 terminal = guess_terminal()
@@ -155,7 +155,7 @@ layouts = [
         border_on_single=True,
         single_border_width=BORDER_WIDTH,
         margin=MARGIN,
-        margin_on_single=0,
+        margin_on_single=MARGIN,
     ),
     layout.Max(
         border_normal=SECONDARY,
