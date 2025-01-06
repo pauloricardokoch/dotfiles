@@ -29,7 +29,7 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 SECONDARY = "#474F7A"
-PRIMARY = "#7360DF"
+PRIMARY = "#c828b0"
 BRIGHT = "#FAE7F3"
 BORDER_WIDTH = 3
 MARGIN = 15
@@ -207,6 +207,7 @@ screens = [
                     location={"Passo Fundo": "Passo Fundo"},
                     format="%c%t",
                     foreground=BRIGHT,
+                    update_interval=60,
                 ),
                 widget.Sep(),
                 widget.Clock(
