@@ -32,7 +32,7 @@ SECONDARY = "#474F7A"
 PRIMARY = "#c828b0"
 BRIGHT = "#FAE7F3"
 BORDER_WIDTH = 3
-MARGIN = 15
+MARGIN = 3
 
 mod = "mod1"
 terminal = guess_terminal()
@@ -99,7 +99,7 @@ keys = [
     Key(
         [mod], "p",
         lazy.spawn(
-            "scrot 'ArchLinux_%Y%m%d_%H%M%S_%s_screenshot_$wx$h.jpg' -s -e 'mv $f ~/Pictures/Screenshots/'"
+            "scrot 'ArchLinux_%Y%m%d_%H%M%S_%s_screenshot_$wx$h.jpg' -s --line mode=edge -e 'mv $f ~/Pictures/Screenshots/'"
         )
     ),
     Key([mod], "o", lazy.spawn("betterlockscreen -l dim")),
